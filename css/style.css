@@ -8,11 +8,11 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: minmax(80px) 300px 150px;
+    grid-template-rows: 80px 600px 600px;
     grid-template-areas: 
-    "nav nav nav"
-    "as1 se1 as2"
-    "as1 se2 as2"
+    "hea hea hea"
+    "as1 ar1 as2"
+    "as1 ar1 as2"
     
     ;
     gap: 10px;
@@ -23,8 +23,8 @@
 
 
 header {
-    grid-area: nav;
-    color:orange;
+    grid-area: hea;
+    background: orange;
 }
 #aside_1 {
     background: brown;
@@ -36,11 +36,11 @@ header {
     grid-area: as2;
 }
 
-#section_1 {
+#article_1 {
     background: purple;
-    grid-area: se1;
+    grid-area: ar1;
+    
 }
-
 #section_2 {
     background: green;
     grid-area: se2;
