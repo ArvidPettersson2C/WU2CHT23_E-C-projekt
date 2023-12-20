@@ -3,33 +3,164 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 #grid_wrapper {
     background-image: url("../img/mountain_backdrop.jpeg");
-    background-size:contain;
+    background-size:cover;
 
     display: grid;
-    height: 100vh;
-    grid-template-columns: 1fr 4fr 3fr;
-    grid-template-rows: 80px 600px 600px;
+    height: 400vh;
+    grid-template-columns: 1fr 4fr 1fr 3fr;
+    grid-template-rows: 80px 600px 600px 600px;
     grid-template-areas: 
-    "hea hea hea"
-    "as1 ar1 as2"
-    "as1 ar1 as2"
-    
+    "hea hea hea hea"
+    "as1 ar1 . as2"
+    "as1 ar2 . as3"
+    "as1 ar4 . as3"
+
     ;
     gap: 20px;
+}
+#grid_wrapper2 {
+    background-image: url("../img/mountain_backdrop.jpeg");
+    background-size:contain;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 80px 600px 100px;
+    grid-template-areas: 
+    "hea hea hea hea"
+    "as4 ar3 ar3 as5"
+    "foo foo foo foo"
+
+    ;
+    gap: 20px;
+}
+#grid_wrapper3 {
+    background-image: url("../img/mountain_backdrop.jpeg");
+    background-size:contain;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr 1fr;
+    grid-template-rows: 80px 300px 300px;
+    grid-template-areas: 
+    "hea hea hea hea"
+    "as1 pi1 bildtext1 as2"
+    "as1 pi1 bildtext1 as2"
+    ;
+    gap: 20px;
+}
+#grid_wrapper4 {
+    background-image: url("../img/mountain_backdrop.jpeg");
+    background-size:contain;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr 1fr;
+    grid-template-rows: 80px 300px 300px;
+    grid-template-areas: 
+    "hea hea hea hea"
+    "as1 pi2 bildtext2 as2"
+    "as1 pi2 bildtext2 as2"
+    ;
+    gap: 20px;
+}
+header {
+    display: grid;
+    grid-area: hea;
+    background: #2196F3;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 80px;
+    grid-template-areas: 
+    "pic te1 te2 te3"
+    
+    ;
+}
+#aside_4{
+    grid-area: as4;
+}
+#aside_5{
+    grid-area: as5;
+}
+#footer{
+    display: grid;
+    grid-area: foo;
+    background: rgb(0, 0, 138);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "kon . dat"
+    ;
+}
+#kontakt{
+    grid-area: kon;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: aliceblue;
+    margin: 10px;
+}
+#date{
+    grid-area: dat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: aliceblue;
+    margin: 10px;
+}
+#article_3{
+    grid-area: ar3;
+    background: #2196F3;
+    outline: 1rem solid;
+    border-radius: 10px;
+    outline-color: rgb(35, 35, 247);
+    text-align: center;
     
 }
+
 #homeimage {
+    grid-area: pic;
     max-width: 75px;
     max-height: 75px;
 }
+#home{
+    grid-area: te1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: aliceblue;
+}
+#home:hover{
+    background-color: #5eaae9;
+    border-radius: 10px;
+}
 
-header {
-    grid-area: hea;
-    background: rgb(15, 104, 193);
+#login{
+    grid-area: te3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: aliceblue;
+}
+#login:hover{
+    background-color: #5eaae9;
+    border-radius: 10px;
+}
+#aboutus_link{
+    grid-area: te2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: aliceblue;
     
+}
+#aboutus_link:hover{
+    background-color: #5eaae9;
+    border-radius: 10px;
 }
 #aside_1 {
     
@@ -40,13 +171,138 @@ header {
     background: brown;
     grid-area: as2;
 }
-
+#aside_3 {
+    grid-area: as3;
+}
 #article_1 {
-    background: purple;
+    display: flex;
+    flex-direction: column;
+    background: #2196F3;
     grid-area: ar1;
+    outline: 1rem solid;
+    border-radius: 10px;
+    outline-color: rgb(35, 35, 247);
+    margin: 10px;
+
+}
+#travel_selfie_1{
+    transition: all 0.4s ease;
+    --f:1.05;
+    clip-path: inset(0);
+    overflow: hidden;
+    object-fit: cover;
+    height: 540px;
+}
+#article_1:hover #travel_selfie_1 {
+    clip-path: inset(calc((1 - 1/var(--f)) * 50%));
+    scale: var(--f);
+}
+.title{
+    margin: 20px;
+    color: aliceblue;
+    display: flex;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+}
+#article_2 {
+    display: flex;
+    flex-direction: column;
+    background: #2196F3;
+    grid-area: ar2;
+    outline: 1rem solid;
+    border-radius: 10px;
+    outline-color: rgb(35, 35, 247);
+    margin: 10px;
+}
+#travel_car_1{
+    transition: all 0.4s ease;
+    --f:1.05;
+    clip-path: inset(0);
+    overflow: hidden;
+    object-fit: cover;
+    height: 540px;
+}
+#article_2:hover #travel_car_1 {
+    clip-path: inset(calc((1 - 1/var(--f)) * 50%));
+    scale: var(--f);
+}
+#pic_once_clicked1{
+    grid-area: pi1;
+    background: #2196F3;
+    outline: 1rem solid;
+    border-radius: 10px;
+    outline-color: rgb(35, 35, 247);
+    margin: 10px;
+    overflow: hidden;
+    object-fit: cover;
+    height: 600px;
+}
+#bildtext1{
+    grid-area: bildtext1;
+    background: #2196F3;
+    outline: 1rem solid;
+    border-radius: 10px;
+    outline-color: rgb(35, 35, 247);
+    margin: 10px;
+    color: aliceblue;
+    display: flex;
+    font-size: 20px;
+}
+#image_clicked1{
+    overflow: hidden;
+    object-fit: cover;
+    height: 600px;
     
 }
-#section_2 {
-    background: green;
-    grid-area: se2;
+#pic_once_clicked2{
+    grid-area: pi2;
+    background: #2196F3;
+    outline: 1rem solid;
+    border-radius: 10px;
+    outline-color: rgb(35, 35, 247);
+    margin: 10px;
+    overflow: hidden;
+    object-fit: cover;
+    height: 600px;
+
+}
+#bildtext2{
+    grid-area: bildtext2;
+    background: #2196F3;
+    outline: 1rem solid;
+    border-radius: 10px;
+    outline-color: rgb(35, 35, 247);
+    margin: 10px;
+    color: aliceblue;
+    display: flex;
+    font-size: 20px;
+}
+#image_clicked2{
+    overflow: hidden;
+    object-fit: cover;
+    height: 600px;
+}
+#article_4{
+    display: flex;
+    flex-direction: column;
+    background: #2196F3;
+    grid-area: ar4;
+    outline: 1rem solid;
+    border-radius: 10px;
+    outline-color: rgb(35, 35, 247);
+    margin: 10px;
+}
+#travel_boat{
+    transition: all 0.4s ease;
+    --f:1.05;
+    clip-path: inset(0);
+    overflow: hidden;
+    object-fit: cover;
+    height: 600px;
+}
+#article_4:hover #travel_boat {
+    clip-path: inset(calc((1 - 1/var(--f)) * 50%));
+    scale: var(--f);
 }
