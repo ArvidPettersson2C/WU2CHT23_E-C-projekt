@@ -9,20 +9,20 @@
 
     display: grid;
     height: 400vh;
-    grid-template-columns: 1fr 4fr 1fr 3fr;
+    grid-template-columns: 1fr 4fr 1fr ;
     grid-template-rows: 80px 600px 600px 600px;
     grid-template-areas: 
-    "hea hea hea hea"
-    "as1 ar1 . as2"
-    "as1 ar2 . as3"
-    "as1 ar4 . as3"
+    "hea hea hea"
+    "as1 ar1 as2"
+    "as1 ar2 as3"
+    "as1 ar4 as3"
 
     ;
     gap: 20px;
 }
 #grid_wrapper2 {
     background-image: url("../img/mountain_backdrop.jpeg");
-    background-size:contain;
+    background-size:cover;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -37,7 +37,7 @@
 }
 #grid_wrapper3 {
     background-image: url("../img/mountain_backdrop.jpeg");
-    background-size:contain;
+    background-size:cover;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 5fr 2fr 1fr;
@@ -51,7 +51,7 @@
 }
 #grid_wrapper4 {
     background-image: url("../img/mountain_backdrop.jpeg");
-    background-size:contain;
+    background-size:cover;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 5fr 2fr 1fr;
@@ -166,9 +166,16 @@ header {
     
     grid-area: as1;
 }
+#terms{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: aliceblue;
+    display: flex;
+    font-size: 20px;
 
-#aside_2 {
-    background: brown;
+}
+#aside {
     grid-area: as2;
 }
 #aside_3 {
